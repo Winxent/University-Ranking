@@ -7,7 +7,6 @@ Goal: Data analysis using google collaboratory python pandas on university ranki
 Before doing data analysis, we have to do data processing. It is always a good practice to verify your data preprocessing before you start your analysis.
 
 The dataset of "Top 2000 Universities of the World" has been provided in the link below.
-<img width="452" alt="image" src="https://github.com/Winxent/University-Ranking/assets/146320825/981bea99-9bb1-4c81-bf3e-d10dfd7cb3ff">
 
 https://drive.google.com/file/d/1C0jgmQlO5xps06WOalrnrbmZ_l2tclgU/view?usp=sharing
 
