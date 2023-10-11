@@ -155,18 +155,18 @@ We have studied the Ranges, Quartiles and Interquartile range in detail. We can 
 
 In order to perform this analysis, we will use the 1.5IQR method 
 
-1. Identification of Column of interest:
+## 1. Identification of Column of interest:
 ```
 Score
 ```
-2. Minimum and Maximum of column used in Analysis:
+## 2. Minimum and Maximum of column used in Analysis:
 ```
 df["Score"].min()
 df["Score"].max()
 ```
 65.7, 100.0
 
-3. Q1, Q3 and IQR of the column:
+## 3. Q1, Q3 and IQR of the column:
 ```
 q1, q3 = df["Score"].quantile([0.25,0.75])
 q1,q3
@@ -178,7 +178,7 @@ iqr
 ```
 6.40
 
-4. Write down the lower and upper expected minimum and maximum of IQR (3 point):
+## 4. Write down the lower and upper expected minimum and maximum of IQR:
 ```
 lower_min = q1 - (1.5*iqr)
 upper_max = q3 + (1.5*iqr)
@@ -188,14 +188,16 @@ print("Upper expected max of IQR = ", upper_max)
 Lower expected min of IQR =  58.100000000000016
 Upper expected max of IQR =  83.69999999999999
 
-5. Number of outliers identified (1 point) 
+## 5. Number of outliers identified
 ```
 df[(df["Score"] > 83.69999999999999) | (df["Score"] < 58.100000000000016 )]
 ```
 <img width="458" alt="image" src="https://github.com/Winxent/University-Ranking/assets/146320825/3627e13f-8f47-42c1-8028-d7991d0c68b3">
+
 63 outliers found
 
-6. Any insights that you can conclude from this analysis 
+## 6. Any insights that we can conclude from this analysis
+   
 Taking help from the Interquartile Range, we have identified 63 Institutions scored higher than the maximum of IQR or the Upper bound threshold of data distribution. 
 63 universities score higher than the max interquartile range. 
 
