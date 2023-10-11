@@ -97,6 +97,8 @@ sorted_df["Country"].head(10).unique()
 ```
 'China', 'USA', 'Greece', 'Egypt', 'Hungary', 'Bulgaria', 'Spain'
 
+![rainbow](https://github.com/Winxent/portfolio/assets/146320825/5dc438d2-e138-4db0-97a0-e5ae8c3473e8)
+
 # Subset Analysis
 While performing Data Analysis, we might not need to consider all the rows and columns. For example, if we want to have a high level overview of the universities in the USA based on their world rank and overall scores, we can make a subset of data having World Rank, Score and Institution only. We can also further filter out universities that are not in the USA.
 
@@ -125,6 +127,7 @@ sorted_df_score[(sorted_df["Country"] == "USA")].head(5)
 
 <img width="458" alt="image" src="https://github.com/Winxent/University-Ranking/assets/146320825/95050a75-5a72-4e36-b557-b69905e150ff">
 
+![rainbow](https://github.com/Winxent/portfolio/assets/146320825/5dc438d2-e138-4db0-97a0-e5ae8c3473e8)
 
 # Group by country 
 Next, we would like to analyse which countries are having more high ranking and high quality universities and which countries have less.
@@ -148,6 +151,8 @@ The average score of
 Two lowest performing countries: 
 1.	North Macedonia
 2.	Kazakhstan
+
+![rainbow](https://github.com/Winxent/portfolio/assets/146320825/5dc438d2-e138-4db0-97a0-e5ae8c3473e8)
 
 # IQR of Dataset
 
