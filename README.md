@@ -18,7 +18,9 @@ import pandas as pd
 df=pd.read_csv("/content/drive/MyDrive/Colab Notebooks/Top 2000 Universities of the World.csv")
 df.head()
 ```
-<img width="452" alt="image" src="https://github.com/Winxent/University-Ranking/assets/146320825/7e186e95-eed5-40f6-89e5-33a6e5a19a23">
+
+<img width="452" alt="image" src="https://github.com/Winxent/University-Ranking/assets/146320825/9c597c1a-0138-461e-9c25-831340d14d76">
+
 
 ## Data Processing
 After having looked at the dataset, it is expected that null or NA values are verified within the dataset, and the corresponding rows are to be dropped as needed to prepare the data for analysis.
