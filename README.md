@@ -200,6 +200,7 @@ Taking help from the Interquartile Range, we have identified 63 Institutions sco
 63 universities score higher than the max interquartile range. 
 
 
+<img width="787" alt="image" src="https://github.com/Winxent/Analysis-on-Students-Performance-in-an-Admission-test/assets/146320825/12c75db7-f6b9-4878-b914-08601d4ab821">
 
 
 
