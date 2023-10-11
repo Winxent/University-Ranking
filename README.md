@@ -1,17 +1,26 @@
 # University-Ranking
 Goal: Data analysis using google collaboratory python pandas on university ranking dataset
 
-https://colab.research.google.com/drive/1S-Z0yBo5T4rZ6CZAbP7mbag49dducyY_?usp=sharing
-
 ![rainbow](https://github.com/Winxent/portfolio/assets/146320825/5dc438d2-e138-4db0-97a0-e5ae8c3473e8)
 
 # Introduction
 Before doing data analysis, we have to do data processing. It is always a good practice to verify your data preprocessing before you start your analysis.
 
 The dataset of "Top 2000 Universities of the World" has been provided in the link below.
+<img width="452" alt="image" src="https://github.com/Winxent/University-Ranking/assets/146320825/981bea99-9bb1-4c81-bf3e-d10dfd7cb3ff">
 
 https://drive.google.com/file/d/1C0jgmQlO5xps06WOalrnrbmZ_l2tclgU/view?usp=sharing
 
+## Import dataset
+https://colab.research.google.com/drive/1S-Z0yBo5T4rZ6CZAbP7mbag49dducyY_?usp=sharing
+```
+import pandas as pd
+df=pd.read_csv("/content/drive/MyDrive/Colab Notebooks/Top 2000 Universities of the World.csv")
+df.head()
+```
+<img width="452" alt="image" src="https://github.com/Winxent/University-Ranking/assets/146320825/7e186e95-eed5-40f6-89e5-33a6e5a19a23">
+
+## Data Processing
 After having looked at the dataset, it is expected that null or NA values are verified within the dataset, and the corresponding rows are to be dropped as needed to prepare the data for analysis.
 
 Count of Null / NA values:
@@ -64,9 +73,71 @@ We will do some analysis for 4 of the data columns
 A student wants to get into the best university. This dataset provides us information about the Universities and their world ranking of different areas (e.g. Employment, Research etc.).
 
 Let’s he/she you want to find a university that has good alumni employment opportunities. From the dataset given,
-* list out the top 10 universities based on employment ability
-* list out the countries where these universities come from 
+  * list out the top 10 universities based on employment ability
+  * list out the countries where these universities come from
+    
 using data aggregation strategies such as sorting, filtering etc.
+
+## Top 10 Universities
+```
+df_work = df.filter(["World Rank","Institution", "Country", "Alumni Employment Rank"])
+sorted_df = df_work.sort_values(by=['Alumni Employment Rank'] , ascending= True )
+sorted_df.head(10)
+```
+
+<img width="458" alt="image" src="https://github.com/Winxent/University-Ranking/assets/146320825/c032f576-ff93-4018-a8bc-99dc1288d59c">
+
+## Distinct Countries Count and their Names
+```
+sorted_df["Country"].head(10).nunique()
+```
+7
+```
+sorted_df["Country"].head(10).unique()
+```
+'China', 'USA', 'Greece', 'Egypt', 'Hungary', 'Bulgaria', 'Spain'
+
+# Subset Analysis
+While performing Data Analysis, we might not need to consider all the rows and columns. For example, if we want to have a high level overview of the universities in the USA based on their world rank and overall scores, we can make a subset of data having World Rank, Score and Institution only. We can also further filter out universities that are not in the USA.
+
+To achieve that, below steps have taken
+1.	Create a subset data frame using filters on above mentioned columns
+2.	And from this subset, filter out the Universities which belong to the USA (the output data frame should only contain universities from the USA).
+
+## Mention the name of top 5 and bottom 5 universities of USA:
+
+1. Create a filtered variable.
+```
+df_score = df.filter(["World Rank","Institution", "Country", "Score"])
+df_score.head()
+```
+2. Sort the filtered variable.
+```
+sorted_df_score = df_score.sort_values(by=['Score'] , ascending= False )
+Display the result in the country USA
+sorted_df_score[(sorted_df["Country"] == "USA")].head(5)
+```
+### Top 5: 
+
+<img width="458" alt="image" src="https://github.com/Winxent/University-Ranking/assets/146320825/e69487af-c653-4838-952a-cf755c49924c">
+
+### Bottom 5:
+
+<img width="458" alt="image" src="https://github.com/Winxent/University-Ranking/assets/146320825/95050a75-5a72-4e36-b557-b69905e150ff">
+
+
+# Group by country 
+Next, we would like to analyse which countries are having more high ranking and high quality universities and which countries have less.
+
+In order to generate these insights, you are required to make a summarised data frame with all the countries and their average score of the universities. (Hint: consider using the “groupby” function)
+
+
+
+
+
+
+
+
 
 
 
